@@ -1,3 +1,3 @@
-# conky-configs
+# dotconf
 
-I will save some conky setups here. Don't have high hopes.
+These are my personal configuration files for various purposes. Probably not well maintained.
