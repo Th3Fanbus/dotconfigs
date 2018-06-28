@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(expr $(cat /sys/class/backlight/*/brightness) + $1) > /sys/class/backlight/*/brightness
