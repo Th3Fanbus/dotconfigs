@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=nano
+export EDITOR=vim
 alias p="sudo pacman"
 alias make="time make"
-alias yaourt="yaourt --noconfirm"
+
