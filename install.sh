@@ -9,6 +9,7 @@ fi
 
 cp ./.zshrc ~
 cp ./.gitconfig ~
-# cp -r ./i3/* ~/.config/i3/
+mkdir -p ~/.config/i3
+cp -r ./i3/* ~/.config/i3/
 
 echo "END OF SCRIPT."

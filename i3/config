@@ -52,17 +52,18 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec echo $(expr $(cat /sys/class/backlight/*/brightness) + 10) > /sys/class/backlight/*/brightness
-# bindsym XF86MonBrightnessDown exec echo $(expr $(cat /sys/class/backlight/*/brightness) - 10) > /sys/class/backlight/*/brightness
-bindsym XF86MonBrightnessUp exec ~/.config/i3/backlight 1
-bindsym XF86MonBrightnessDown exec ~/.config/i3/backlight -1
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec ~/.config/i3/backlight 10
+bindsym XF86MonBrightnessDown exec ~/.config/i3/backlight -10
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec termite
 
 # start a Chromium
 bindsym $mod+c exec chromium
+
+# start an owo
+bindsym $mod+s exec owo -s
 
 # start a Thunar
 bindsym $mod+t exec thunar
@@ -111,7 +112,6 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
