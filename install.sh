@@ -7,10 +7,15 @@ fi
 
 # sudo pacman -S i3
 
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3status
+mkdir -p ~/.config/termite
+
 cp ./.zshrc ~
 cp ./.gitconfig ~
-mkdir -p ~/.config/i3
 cp -r ./i3/* ~/.config/i3/
+cp -r ./i3status/* ~/.config/i3status/
+cp -r ./termite/* ~/.config/termite/
 
 echo "Now copying files as root with sudo"
 sudo cp backlight.rules /etc/udev/rules.d/backlight.rules
