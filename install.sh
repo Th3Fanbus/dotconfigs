@@ -12,4 +12,7 @@ cp ./.gitconfig ~
 mkdir -p ~/.config/i3
 cp -r ./i3/* ~/.config/i3/
 
+echo "Now copying files as root with sudo"
+sudo cp backlight.rules /etc/udev/rules.d/backlight.rules
+
 echo "END OF SCRIPT."

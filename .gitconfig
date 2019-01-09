@@ -3,3 +3,5 @@
 	name = Angel Pons
 [pull]
 	rebase = true
+[merge]
+	tool = meld
