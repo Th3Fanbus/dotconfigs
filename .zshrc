@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-alias c="cd coreboot"
+alias c="cd ~/coreboot"
 alias n="nvim"
 alias p="sudo pacman"
 alias fuck="nvim ~/.zsh_history && exec zsh"
