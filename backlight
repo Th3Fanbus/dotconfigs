@@ -1,0 +1,6 @@
+#!/bin/bash
+shopt -s nullglob
+for f in /sys/class/backlight/*/brightness; do
+	echo $f
+	echo $(expr $(cat $f) + $1) > $f
+done
