@@ -1,6 +1,6 @@
 [options]
 
-font = Monospace 10.5
+font = xos4 Terminus 11
 scrollback_lines = -1
 
 [colors]
