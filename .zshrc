@@ -1,4 +1,8 @@
-export LC_CTYPE=en_US.UTF-8
+# This mess is supposed to be our .zshrc
+
+# No need to hardcode this
+#export LC_CTYPE=en_US.UTF-8
+export LC_CTYPE=$LANG
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
@@ -8,8 +12,8 @@ zstyle ':completion:*:*:*:*:*' menu yes select
 zstyle ':completion:*' menu select
 
 export HISTFILE=~/.zsh_history
-export HISTSIZE=10000000
-export SAVEHIST=100000000
+export HISTSIZE=100000000
+export SAVEHIST=1000000000
 
 unsetopt SHARE_HISTORY
 unsetopt TRANSIENT_RPROMPT
@@ -38,7 +42,7 @@ key=(
 )
 
 # History Substring Search
-source /home/usuario/.zsh/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-history-substring-search.zsh
 
 bindkey -v
 bindkey "$key[Up]" history-substring-search-up
@@ -49,9 +53,11 @@ export EM100_HOME=~/em100
 
 zstyle ':prompt:grml:right:setup' items ''
 
+# If you get "command not found: prompt", ensure grml-zsh-config is installed
+# Apparently it loads and runs "promptinit" for us, so we don't need to do it
 prompt gentoo
 
-local return_code="%(?.%{$fg[green]%}.%{$fg[red]%})%? ↵%{$reset_color%}"
+local return_code="%(?.%{$fg[green]%}.%{$fg[red]%})%?↵%{$reset_color%}"
 RPS1="%B${return_code}%b"
 
 export EDITOR=nvim
@@ -59,24 +65,29 @@ export VISUAL=nvim
 
 export PATH="${PATH}:/home/usuario/.cargo/bin:/home/usuario/.local/bin"
 
-alias :q="exit"
-alias cp="cp -i"
 alias _="sudo "
-alias fstat="stat --printf='birth: \t%w\natime: \t%x\nmtime: \t%y\nctime: \t%z\n'"
-alias f="grep -r"
-alias ff="grep -ri"
-alias fh="grep -rh"
-alias gs="git status"
-alias gc="git checkout"
-alias sudo="sudo "
+alias :q="exit"
 alias c="cd ~/coreboot"
-alias n="nvim"
-alias p="sudo pacman"
-alias fuck="nvim ~/.zsh_history && exec zsh"
-alias make="time make"
+alias cp="cp -i"
+alias f="grep -r"
 alias fastboot="sudo $(which fastboot)"
-
+alias fh="grep -rh"
+alias ff="grep -ri"
+alias fstat="stat --printf='birth: \t%w\natime: \t%x\nmtime: \t%y\nctime: \t%z\n'"
+alias fuck="nvim ~/.zsh_history && exec zsh"
+alias gc="git checkout"
+alias gs="git status"
+alias make="time make"
+alias n="nvim"
 alias nosusp="systemd-inhibit --what=handle-lid-switch sleep 666d"
+alias p="sudo pacman"
+alias vi="nvim"
+
+# Used to allow alias substitution in sudo commands
+# https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Aliases
+alias sudo="sudo "
+
+# TODO: we inherited this from someone else, but we've never used it...
 alias pakkuscuffedgitupdate="pakku -S \$(pakku -Qq | grep \"\-git\")"
 
 function cc_g++ {
@@ -87,6 +98,7 @@ function gf {
 	geany $(grep -r --files-with-matches $@)
 }
 
+# Disable Return Code (to avoid wrapping issues when resizing the terminal)
 function drc {
 	RPS1=""
 }

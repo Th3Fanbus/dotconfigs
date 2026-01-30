@@ -1,0 +1,20 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+# Allow things like xdg-open to find the web browser we use
+BROWSER=firefox-developer-edition
+
+# To make qt5ct themes work (do we still use this?)
+QT_QPA_PLATFORMTHEME=qt5ct
+
+# Make Perl do a complete cleanup
+PERL_DESTRUCT_LEVEL=2
+
+# Mitigation against log4j2 RCE bug
+JAVA_OPTS=-Dlog4j2.formatMsgNoLookups=true
+
+# Attempt to make GNOME respect dark theme preferences
+ADW_DISABLE_PORTAL=1

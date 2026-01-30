@@ -1,0 +1,6 @@
+clear mod4
+keycode 66 = Hyper_L
+add mod3 = Hyper_L
+add mod4 = Super_L Super_R
+keycode 52 = z Z z Z guillemotleft less guillemotleft
+keycode 53 = x X x X guillemotright greater guillemotright
