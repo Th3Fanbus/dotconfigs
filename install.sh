@@ -133,7 +133,7 @@ if prompt_confirm "Set up git?"; then
 fi
 
 if prompt_confirm "Set up i3?"; then
-	run_pacman -S --needed i3-wm i3blocks i3lock i3status parcellite
+	run_pacman -S --needed i3-wm i3lock i3status parcellite
 
 	copy_file_to_home ".Xmodmap"
 	copy_file_to_home ".Xresources"
