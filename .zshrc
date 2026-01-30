@@ -57,7 +57,7 @@ zstyle ':prompt:grml:right:setup' items ''
 # Apparently it loads and runs "promptinit" for us, so we don't need to do it
 prompt gentoo
 
-local return_code="%(?.%{$fg[green]%}.%{$fg[red]%})%?↵%{$reset_color%}"
+local return_code="%(?.%{$fg[green]%}.%{$fg[red]%})%? ↵%{$reset_color%}"
 RPS1="%B${return_code}%b"
 
 export EDITOR=nvim
