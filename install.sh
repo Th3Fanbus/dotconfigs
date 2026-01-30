@@ -19,5 +19,6 @@ cp -r ./termite/* ~/.config/termite/
 
 echo "Now copying files as root with sudo"
 sudo cp backlight.rules /etc/udev/rules.d/backlight.rules
+sudo cp prompt_gentoo_setup /usr/share/zsh/functions/Prompts/prompt_gentoo_setup
 
 echo "END OF SCRIPT."
