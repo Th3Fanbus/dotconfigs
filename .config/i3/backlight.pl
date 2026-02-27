@@ -54,11 +54,13 @@ foreach my $backlight_dev (glob ("/sys/class/backlight/*")) {
 	# TODO: use actual_brightness instead?
 	my $current = read_backlight_value($backlight_dev, "brightness");
 	my $maximum = read_backlight_value($backlight_dev, "max_brightness");
+	# Zero brightness turns off the backlight in some laptops
+	my $minimum = max(1, $maximum / 100);
 	my $new_value = $percent * $maximum / 100;
 	if ($is_delta) {
 		$new_value += $current;
 	}
-	my $new_brightness = int(clamp(0, $new_value, $maximum));
+	my $new_brightness = int(clamp($minimum, $new_value, $maximum));
 	write_backlight_value($backlight_dev, "brightness", $new_brightness);
 	print fileparse($backlight_dev) . ": $current ---> $new_brightness\n";
 }
