@@ -1,9 +1,9 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec parcellite
-exec nm-applet
-exec ~/.screenlayout/default.sh
+exec_always parcellite
+exec_always nm-applet
+exec_always ~/.screenlayout/default.sh
 
 exec_always setxkbmap es; setxkbmap -option caps:hyper; xmodmap ~/.Xmodmap
 exec_always pkill picom; picom --vsync -b -CG --no-fading-destroyed-argb --config ~/.config/picom.conf
